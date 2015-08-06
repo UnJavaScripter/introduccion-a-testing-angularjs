@@ -1,3 +1,36 @@
+<style>
+	.tachado{
+		text-decoration: line-through;
+	}
+	.gris{
+		color: gray;
+	}
+	.bold{
+		font-weight: bold;
+	}
+</style>
+
 <div>
 	{{main.texto}}
 </div>
+
+<form ng-submit="main.agregarCosa()">
+    <div>
+      <input type="text" class="form-control" ng-model="main.cosaNueva" placeholder="¿Qué tienes que hacer?">
+      <span>
+        <input type="submit" value="¡Agregar!">
+      </span>
+    </div><!-- /input-group -->
+
+</form>
+
+<ul>
+	<li ng-repeat="cosa in main.listaDeCosas| filter:buscarCosa">
+
+		<input type="checkbox" ng-model="cosa.completada">
+
+		<label ng-class="{'tachado gris': cosa.completada, 'bold': !cosa.completada}">{{cosa.tarea}}</label>
+		
+	</li>
+</ul>
+<me-faltan cosas="main.listaDeCosas"></me-faltan>

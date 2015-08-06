@@ -4,8 +4,7 @@
   "description": "",
   "main": " ",
   "scripts": {
-    "test": "karma start",
-    "e2e": "protractor protractor.conf.js",
+    "test": "karma start"
   },
   "repository": {
     "type": "git",

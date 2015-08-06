@@ -1,10 +1,23 @@
 (function(){
 	'use strict';
 	function main_Ctrl(){
-		var algo = 23
+		
 		angular.extend(this, {
-			texto: '¡Funciono!'
+			texto : '¡Funciono!',
+			listaDeCosas : [
+				{ tarea: "Hacer diapositivas", completada: false },
+				{ tarea: "Comparar pan", completada: true },
+				{ tarea: "Pagar Internet", completada: false}
+			],
+			agregarCosa : function(){
+				if(this.cosaNueva.length > 0){
+				
+					this.listaDeCosas.push({tarea: this.cosaNueva, completada: false});
+				}
+				this.cosaNueva = "";
+			},
 		})
+
 	}
 
 	angular.module('testingApp')

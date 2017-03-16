@@ -10,10 +10,10 @@
 				{ tarea: "Pagar Internet", completada: false}
 			],
 			agregarCosa : function(){
-				if(this.cosaNueva.length > 0){
-				
-					this.listaDeCosas.push({tarea: this.cosaNueva, completada: false});
+				if(!Boolean(this.cosaNueva)){
+					return
 				}
+				this.listaDeCosas.push({tarea: this.cosaNueva, completada: false});
 				this.cosaNueva = "";
 			},
 		})
